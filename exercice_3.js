@@ -50,14 +50,31 @@ const users = [
  * 1. Afficher les noms et les numéros de téléphone dans la console.
  */
 
+users.forEach(user => {
+  console.log(`${user.name} ${user.phone}`);
+});
+
 
 
 /**
  * 2. Afficher les informations de l'utilisateur ayant cet ID : 6249d07225e39f1d9520db2a
  */
 
+users.forEach(user => {
+  if(user._id === "6249d07225e39f1d9520db2a") {
+    console.log(user);
+  }
+})
 
 
 /**
  * 3. Trouver les années de naissances de chaque utilisateur.
  */
+const currentYear = new Date().getFullYear();
+ users.forEach(user => {
+  console.log(`${currentYear - user.age}`);
+});
+
+const dateNow = Date.now();
+const date = new Date(dateNow);
+console.log(date.getHours(), date.getUTCDate(), date.getUTCSeconds())
